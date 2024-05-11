@@ -1,0 +1,189 @@
+$graph-sizes: (
+  12: 0.85rem,
+  16: 1rem,
+  20: 1.25rem,
+  24: 1.5rem,
+  28: 1.75rem,
+  32: 2rem
+);
+
+@mixin p-graph($size) {
+  font-size: $size;
+  min-height: $size * 1.5;
+  line-height: $size * 1.5;
+  color: var(--font-color);
+  font-family: Inter, sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &.--white {
+    color: var(--white);
+  }
+
+  &.--black {
+    color: var(--font-black);
+  }
+
+  &.--yellow {
+    color: var(--secondary-pr-color);
+  }
+
+  &.--green {
+    color: var(--font-pr-color);
+  }
+  &.--danger {
+    color: var(--dg-red-color);
+  }
+  &.not-priority {
+    color: var(--font-pr-disabled-color) !important;
+  }
+
+  &.priority {
+    color: var(--font-color) !important;
+  }
+  &.--title-type {
+    cursor: pointer;
+    white-space: nowrap;
+    text-align: left;
+    width: -webkit-fill-available;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &.--bold{
+    font-weight: 600;
+  }
+  &.--suffix {
+    display: flex;
+    flex-direction: row;
+    gap: 0.125rem;
+
+    &::after {
+      content: attr(data-suffix);
+    }
+  }
+}
+
+@mixin title($size) {
+  display: block;
+  font-size: $size;
+  line-height: $size * 1.5;
+  min-height: $size * 1.5;
+  color: var(--font-color);
+  font-weight: 600;
+  font-family: Inter, sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &.--title-type {
+    cursor: pointer;
+    max-height: $size * 1.5 * 2;
+    text-align: left;
+    width: -webkit-fill-available;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@mixin title-with-icon($size) {
+  @include title($size);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+
+  svg {
+    aspect-ratio: 1/1;
+    width: $size * 1.125;
+    height: $size * 1.125;
+    fill: var(--font-color);
+  }
+}
+
+p.p-graph {
+  display: block;
+  font-weight: 400;
+  font-family: Inter, sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &.box-index {
+    display: flex;
+
+    width: max(24px, 1.5rem);
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    aspect-ratio: 1/1;
+
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 600;
+    color: var(--font-color);
+    background-color: var(--bg-color-300);
+  }
+
+  &.box-tag{
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+
+    height: max(24px, 1.5rem);
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.75rem;
+
+    color: var(--font-color);
+    background-color: var(--bg-color-300);
+
+    &.--active,
+    &.--selected{
+      color: var(--white);
+      background-color: var(--pr-color);
+    }
+  }
+}
+
+h1.title {
+  @include title(32);
+}
+
+h1.title-with-icon {
+  @include title-with-icon(32);
+}
+
+p span {
+  &.--bold {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    font-family: inherit;
+    font-weight: 600;
+  }
+}
+
+@each $size, $font-size in $graph-sizes {
+  input.p-graph-#{$size},
+  p.p-graph-#{$size} {
+    @include p-graph($font-size);
+  }
+
+  span.caption-#{$size},
+  b.caption-#{$size} {
+    @include p-graph($font-size);
+  }
+}
+
+@each $size, $font-size in $graph-sizes {
+  h1.title-#{$size} {
+    @include title($font-size);
+  }
+}
+
+@each $size, $font-size in $graph-sizes {
+  h1.title-with-icon-#{$size} {
+    @include title-with-icon($font-size);
+  }
+}

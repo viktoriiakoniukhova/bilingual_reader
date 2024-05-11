@@ -1,0 +1,191 @@
+:root {
+    --width-side-nav-bar: 20rem;
+    --height-top-bar: max(5rem, 85px);
+    --br-size: 0.1rem;
+    --br-outline-size: 0.25rem;
+
+    --border: var(--br-size) solid var(--br-color);
+    --btn-outline: var(--br-outline-size) solid var(--bg-color-400);
+    --outline: var(--br-outline-size) solid var(--bg-color-10);
+    --pr-outline: var(--br-outline-size) solid var(--pr-color-outline);
+    --circle-btn-outline: var(--br-outline-size) solid var(--bg-color-40)
+}
+
+div#root{
+    transition: filter 300ms ease-in-out;
+   &.filter{
+    filter: blur(0.125rem);
+   }
+}
+body {
+    background-color: var(--bg-color-300);
+    font-family: Inter, sans-serif;
+}
+
+div.text-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+
+    &.--mini {
+        gap: 0.125rem
+    }
+}
+
+div.--border-type {
+    border: var(--border);
+
+    header {
+        border-bottom: var(--border);
+    }
+
+    footer {
+        border-top: var(--border);
+    }
+}
+
+div.flex-box {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: var(--border);
+    border-radius: 1.5rem;
+    background-color: var(--bg-color-100);
+}
+
+div.box-wrapper {
+    display: flex;
+}
+
+header.header-wrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: row;
+    gap: 1.5rem;
+    &.--sticky{
+        background-color: inherit;
+        z-index: 2;
+        position: sticky;
+        top: -3.55rem;
+    }
+    &.--main {
+        padding: 1.25rem 2rem;
+        border-radius: 1.5rem 1.5rem 0 0;
+    }
+}
+
+div.box-mark {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    border-radius: 0.75rem;
+    padding: 0.25rem 0.75rem;
+
+    color: var(--white) !important;
+    background-color: var(--secondary-pr-color);
+}
+
+div.bg-pattern-upper{
+    pointer-events: none;
+    position: absolute;
+    top: calc(var(--top-offset) * -1);
+    left: 0;
+    overflow: hidden;
+}
+
+div.bg-pattern-bottom{
+    pointer-events: none;
+    position: absolute;
+    bottom: calc(var(--top-offset) * -1);
+    right: 0;
+    overflow: hidden;
+    svg{
+        transform: rotateZ(180deg);
+    }
+}
+
+div.page-wrapper {
+    width: 100%;
+    height: calc(100vh - var(--height-top-bar) - 8rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    div.books-placeholder {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 10vh;
+        gap: 1rem;
+
+        header.header-placeholder {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+
+            .icon-wrapper svg {
+                width: 3rem;
+                height: 3rem;
+                aspect-ratio: 1/1;
+                fill: var(--pr-color);
+            }
+        }
+    }
+}
+
+.scroll-wrapper{
+    overflow-y: auto;
+
+    &.--angle-scroll-body{
+        &::-webkit-scrollbar-track {
+            border-radius: 0 !important;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: 1rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 1rem;
+        background-color: var(--bg-color-400);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border: 0.35rem solid transparent;
+        cursor: pointer;
+        background-clip: content-box;
+        border-radius: 1rem;
+        cursor: pointer;
+        background-color: var(--bg-color-100);
+    }
+}
+
+.slider-wrapper-horizontal::-webkit-scrollbar {
+    height: 1.25rem;
+}
+.slider-wrapper::-webkit-scrollbar {
+    width: 1.25rem;
+}
+
+.slider-wrapper::-webkit-scrollbar-track,
+.slider-wrapper-horizontal::-webkit-scrollbar-track {
+    background-color: var(--bg-color-600);
+}
+/* Handle */
+.slider-wrapper::-webkit-scrollbar-thumb,
+.slider-wrapper-horizontal::-webkit-scrollbar-thumb {
+    border: 0.4rem solid transparent;
+    cursor: pointer;
+    background-clip: content-box;
+    border-radius: 1rem;
+    cursor: pointer;
+    background-color: var(--bg-color-200);
+}

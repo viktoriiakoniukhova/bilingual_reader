@@ -1,0 +1,28 @@
+export const BookGenres = [
+    {key: "fantasy", title: "Фентезі"},
+    {key: "sci-fi", title: "Наукова фантастика"},
+    {key: "detective", title: "Детектив"},
+    {key: "thriller", title: "Трилер"},
+    {key: "romance", title: "Романтика"},
+    {key: "historical", title: "Історичний"},
+    {key: "adventure", title: "Пригодницький"},
+    {key: "horror", title: "Жахи"},
+    {key: "memoir", title: "Мемуар"},
+    {key: "mythology", title: "Фентезійний"},
+    {key: "non-fiction", title: "Науково-популярний"},
+    {key: "poetry", title: "Поезія"},
+    {key: "biography", title: "Біографія"},
+    {key: "autobiography", title: "Автобіографія"},
+    {key: "essay", title: "Есе"},
+    {key: "fiction", title: "Фантастика"},
+    {key: "drama", title: "Драма"},
+    {key: "satire", title: "Сатира"},
+    {key: "fairy-tale", title: "Казка"},
+    {key: "mystery", title: "Містика"},
+    {key: "legal-thriller", title: "Юридичний трилер"},
+    {key: "medical-thriller", title: "Медичний трилер"},
+    {key: "psychological", title: "Психологічний роман"},
+    {key: "religious", title: "Релігійна література"},
+].sort((a, b) => a.title.localeCompare(b.title, "uk"));
+
+export default BookGenres

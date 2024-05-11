@@ -1,0 +1,91 @@
+.checkBoxWrapper {
+  --scale: 1;
+  padding-left: 2rem;
+  display: flex;
+  align-items: center;
+  height: calc(2rem * var(--scale));
+  position: relative;
+  font-size: calc(1.75rem * var(--scale));
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  input:disabled ~ .checkMark {
+    background-color: var(--bg-color-400);
+  }
+}
+
+.checkBoxWrapper p {
+  margin-left: 1rem;
+}
+
+.checkMark:after {
+  content: "";
+
+  position: absolute;
+  left: calc(0.7rem * var(--scale));
+  top: calc(0.4rem * var(--scale));
+  width: calc(0.4rem * var(--scale));
+  height: calc(0.8rem * var(--scale));
+
+
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.checkBoxWrapper input:not(:disabled):checked ~ .checkMark {
+  background-color: var(--pr-color);
+  &:after {
+    border: solid var(--white);
+    border-width: 0 3px 3px 0;
+  }
+}
+.checkBoxWrapper .checkMark:after {
+  border: solid var(--bg-color-300);
+  border-width: 0 3px 3px 0;
+}
+
+.checkBoxWrapper:hover .checkMark:after {
+  border: solid var(--pr-color);
+  border-width: 0 3px 3px 0;
+}
+
+.checkBoxWrapper input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkBoxWrapper span.checkMark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(2rem * var(--scale));
+  aspect-ratio: 1/1;
+  background-color: var(--bg-color-400);
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+}
+
+.checkBoxWrapper.--invalid input:not(:disabled) ~ .checkMark {
+  background-color: var(--Primary-Red-10);
+  border: var(--border-size) solid var(--Primary-Red);
+}
+
+
+
+
+.checkBoxWrapper input:focus-visible ~ .checkMark {
+  outline: calc(var(--border-size) * 2) solid var(--pr-color);
+}
+
+.checkBoxWrapper input:not(:checked):focus-visible ~ .checkMark {
+  background-color: var(--white);
+  border: var(--border-size) solid var(--bg-color-200);
+  outline: calc(var(--br-size) * 2) solid var(--pr-color);
+}
+

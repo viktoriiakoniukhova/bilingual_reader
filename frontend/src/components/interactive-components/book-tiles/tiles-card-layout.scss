@@ -1,0 +1,236 @@
+li.book-tile-card-wrapper {
+    display: flex;
+    box-sizing: border-box;
+    padding: 1.25rem;
+    padding-right: 0;
+    width: 100%;
+    height: 20rem;
+
+    transform-origin: center;
+    transition: transform 234ms ease-in-out;
+
+    &.--active,
+    &:hover {
+        transform: scale(1.035);
+    }
+
+    &:focus-visible {
+        transform: scale(1.035);
+        outline: calc(var(--br-size) * 2.5) solid var(--pr-color);
+    }
+
+    .book-tile-card-content-wrapper {
+        border-radius: 0.75rem;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        width: 100%;
+        border: var(--br-size) solid transparent;
+        p.box-tag{
+            position: absolute;
+            right: 0.5rem;
+            top: 0.5rem;
+            background-color: var(--bg-link-color);
+            color: var(--white);
+        }
+        div.progress-bar-mark {
+            display: flex;
+            position: absolute;
+            justify-content: center;
+            left: 0.375rem;
+            right: 0.375rem;
+            bottom: 0.375rem;
+        }
+    }
+
+    img {
+        cursor: pointer;
+        border-radius: 0.75rem;
+        object-fit: cover;
+        height: 100%;
+        width: 11rem;
+    }
+
+    &.--active {
+        max-width: 35rem;
+    }
+
+    &.--active .book-tile-card-content-wrapper {
+        border: var(--border);
+
+        img {
+            border-radius: 0.75rem 0 0 0.75rem;
+        }
+
+        div.book-tile-card-inf-wrapper {
+            width: calc(35rem - 11rem - 3rem);
+            padding: 0.75rem 1rem;
+            gap: 1rem;
+            padding-left: 0;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+
+
+
+            section.bottom-section-wrapper {
+                display: flex;
+
+                flex-direction: row;
+                width: 100%;
+                gap: 1rem;
+            }
+        }
+    }
+}
+
+div.progress-bar-box-wrapper,
+section.bottom-section-wrapper,
+section.upper-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+
+    div.progress-bar {
+        position: relative;
+        height: 0.75rem;
+        margin-top: 1rem;
+        border-radius: 1rem;
+        background-color: var(--bg-color-400);
+
+        &::before {
+            border-radius: 1rem;
+            position: absolute;
+            content: " ";
+            width: var(--progress);
+            animation: progress var(--time) linear 1;
+            background-color: var(--secondary-pr-color);
+            height: 0.75rem;
+        }
+
+        .progress-bar-info {
+            display: flex;
+            gap: 0.5rem;
+            position: absolute;
+            bottom: 1rem;
+            right: 0;
+        }
+    }
+}
+
+
+
+li.book-img-card-wrapper {
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    transform-origin: center;
+    transition: transform 268ms ease-in-out;
+
+    &.--compact {
+        height: 24.5rem;
+    }
+
+    &.--roomy {
+        border: var(--border);
+
+        div.img-book-wrapper {
+            height: 20rem;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.035);
+    }
+
+    &:focus-visible {
+        transform: scale(1.035);
+        outline: calc(var(--br-size) * 2.5) solid var(--pr-color);
+    }
+
+    div.img-book-wrapper {
+        position: relative;
+        height: 100%;
+        display: flex;
+
+        &:hover {
+            
+
+            &::before {
+                z-index: 4;
+                left: 0;
+                bottom: 0;
+                top: 0;
+                right: 0;
+                content: " ";
+                background-color: #0000005e;
+                position: absolute;
+            }
+
+            .read-book {
+                bottom: 2.75rem;
+                opacity: 100%;
+            }
+        }
+
+        .read-book {
+            z-index: 6;
+            position: absolute;
+            left: 2.75rem;
+            right: 2.75rem;
+            opacity: 0%;
+            bottom: 0;
+            transition:
+                bottom 368ms ease-in-out,
+                opacity 368ms ease-in-out;
+        }
+    }
+
+    div.progress-bar-mark {
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        right: 0.375rem;
+        bottom: 0.375rem;
+    }
+
+    section.bottom-section-wrapper {
+        background-color: var(--bg-color-300);
+        padding: 0.5rem 1rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1 0 0;
+        gap: 1.25rem;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    img.book-card {
+        position: relative;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@keyframes progress {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: var(--progress);
+    }
+
+}

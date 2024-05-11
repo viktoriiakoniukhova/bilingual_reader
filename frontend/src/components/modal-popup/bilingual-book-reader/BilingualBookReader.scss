@@ -1,0 +1,265 @@
+div.bilingual-book-reader-wrapper {
+    position: relative;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2.5rem 0;
+    height: 100%;
+
+    header.title-wrapper {
+        position: absolute;
+        top: -2.525rem;
+        left: 0;
+        right: 0;
+        width: 100%;
+        opacity: 100%;
+        transition: opacity 320ms ease-in-out;
+
+        &.--hidden {
+            opacity: 0%;
+        }
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.125rem;
+        justify-content: center;
+        padding-right: 1rem;
+
+        h1 {
+            max-width: 48rem;
+            min-width: 420px;
+            white-space: nowrap;
+        }
+
+        div.header-menu-wrapper {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        button.btn-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: max(38px, 2.5rem);
+            border-radius: 0.25rem;
+            background-color: var(--bg-color-200);
+
+            &:active,
+            &:hover {
+                background-color: var(--bg-color-400);
+
+            }
+
+            svg {
+                width: 0.85rem;
+                height: 0.85rem;
+                fill: var(--font-pr-color);
+            }
+        }
+
+        div.page-wrapper-selector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            min-width: 112px;
+            background-color: var(--bg-color-200);
+            border-radius: 0.25rem;
+
+            .box-selector {
+                text-align: center;
+                min-width: max(48px, 3rem);
+
+                &.--input {
+                    padding: 0.125rem;
+                    border-radius: 0.25rem;
+                    max-width: 3rem;
+                    background-color: var(--bg-color-400);
+                }
+            }
+        }
+    }
+
+    footer.footer-wrapper {
+        position: absolute;
+        bottom: -1.5rem;
+        left: 0;
+        right: 0;
+        width: 100%;
+        opacity: 100%;
+ 
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+
+        padding-right: 1rem;
+
+        div.left-menu {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            width: 100%;
+            flex-grow: 1;
+            transition: opacity 320ms ease-in-out;
+
+            &.--hidden {
+                opacity: 0%;
+            }
+
+            button.btn-details {
+                min-width: 12rem;
+                opacity: 100%;
+            }
+
+            div.color-theme-wrapper {
+                display: flex;
+                align-items: center;
+                gap: 1.75rem;
+                padding: 0.5rem 1.25rem;
+                border-radius: 0.75rem;
+                color: var(--font-pr-color);
+                background-color: var(--bg-color-300);
+                width: 20rem;
+                justify-content: space-between;
+                opacity: 100%;
+                
+                div.color-theme-boxs {
+                    width: calc(1.75rem * 2 + 1.5rem + 3rem);
+                    display: flex;
+                    justify-content: center;
+                    gap: 0.75rem;
+                }
+
+                div.color-theme-box {
+                    display: flex;
+                    align-items: center;
+
+                    border-radius: 0.25rem;
+                    width: 1.75rem;
+                    height: 1.75rem;
+
+                    cursor: pointer;
+                    background-color: var(--color-theme);
+                    transition: width 220ms ease-in-out;
+
+                    &:hover {
+                        width: 3rem;
+                    }
+
+                    &:active,
+                    &.--active {
+                        outline: calc(var(--br-size) * 2.5) solid var(--bg-color-400);
+                    }
+                }
+            }
+
+            div.progress-bar-box-wrapper{
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+
+                padding: 0.5rem 1.25rem;
+                border-radius: 0.75rem;
+                background-color: var(--bg-color-300);
+
+                flex: 1 0 0;
+
+                .progress-bar{
+                    width: 100%;
+                }
+                
+            }
+        }
+
+        p.page-index {
+            box-sizing: border-box;
+            min-width: max(38px, 4rem);
+            height: 3rem;
+            
+            flex: 1 0 0;
+            padding: 0 0.75rem;
+            justify-content: center;
+            text-align: center;
+        }
+
+    }
+}
+
+main.book-reader-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: calc(100vh - 10.5rem);
+    padding-right: 2rem;
+    gap: 5rem;
+
+    section.section-page-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        flex: 1 0 0;
+
+        div.box-reader-wrapper {
+            width: 50%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+
+            div.book-page-wrapper {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                width: 100%;
+                gap: 1rem;
+
+                p {
+                    text-align: justify;
+                    text-indent: 1rem;
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    color: var(--font-color);
+                }
+            }
+        }
+
+        div.footer-page-wrapper {
+            position: absolute;
+            bottom: -3rem;
+            left: 0;
+            right: 0;
+
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 2.5rem;
+
+            p {
+                padding: 0 1.25rem;
+                background-color: var(--bg-color-100);
+                position: relative;
+                z-index: 1;
+            }
+
+            &::before {
+                width: 100%;
+                height: 0.1rem;
+                background-image: linear-gradient(to right, var(--bg-color-100), var(--pr-color), var(--bg-color-100));
+                background-clip: content-box;
+                content: "";
+                position: absolute;
+            }
+        }
+    }
+
+}

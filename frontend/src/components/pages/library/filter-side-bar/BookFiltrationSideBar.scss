@@ -1,0 +1,25 @@
+main.side-bar-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 1.25rem 0 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: space-between;
+
+}
+
+div.filter-wrapper-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  ul.ul-filter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.175rem;
+    max-height: calc(1.7rem * 18 + 0.175rem * 17);
+
+  }
+}

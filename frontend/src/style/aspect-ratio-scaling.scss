@@ -1,0 +1,117 @@
+:root {
+	--ratio-coefficient: 1;
+	font-size: calc(var(--scale) * var(--ratio-coefficient));
+}
+@media screen and (min-width: 200px) and (min-aspect-ratio: 1/3) {
+	:root {
+		--scale: 10px;
+	}
+}
+@media screen and (min-width: 414px) and (min-aspect-ratio: 1/3) {
+	:root {
+		--scale: 10.5px;
+	}
+}
+@media screen and (min-width: 520px) and (min-aspect-ratio: 1/3) {
+	:root {
+		--scale: 12.5px;
+	}
+}
+@media screen and (min-width: 720px) and (min-aspect-ratio: 1/3) {
+	:root {
+		--scale: 13.5px;
+	}
+}
+@media screen and (min-width: 1024px) and (min-aspect-ratio: 1/3) {
+	:root {
+		--scale: 13.75px;
+	}
+}
+
+
+
+@media screen and (min-width: 720px) and (max-aspect-ratio: 3/1) {
+	:root {
+		--scale: 13.5px;
+	}
+}
+@media screen and (min-width: 1024px) and (max-aspect-ratio: 3/1) {
+	:root {
+		--scale: 14px;
+	}
+}
+
+@media screen and (min-width: 1280px) and (max-aspect-ratio: 3/1) {
+	:root {
+		--scale: 14px;
+	}
+}
+@media screen and (min-width: 1440px) and (max-aspect-ratio: 3/1) {
+	:root {
+		--scale: 14px;
+	}
+}
+@media screen and (min-width: 1600px) and (max-aspect-ratio: 3/1) {
+	:root {
+		--scale: 15px;
+	}
+}
+@media screen and (min-width: 1920px) and (max-aspect-ratio: 3/1) {
+	:root {
+		--scale: 16px;
+	}
+}
+@media screen and (min-width: 2560px) and (max-aspect-ratio: 3/1) {
+	:root {
+		--scale: 19px;
+	}
+}
+@media screen and (min-width: 3840px) and (max-aspect-ratio: 3/1) {
+	:root {
+		--scale: 28px;
+	}
+}
+
+@media screen and (min-width: 3000px) and (min-aspect-ratio: 2/1) and (max-aspect-ratio: 4/1) {
+	:root {
+		--scale: 18px;
+	}
+}
+@media screen and (min-width: 3500px) and (min-aspect-ratio: 2/1) and (max-aspect-ratio: 4/1) {
+	:root {
+		--scale: 24px;
+	}
+}
+@media screen and (min-width: 3750px) and (min-aspect-ratio: 2/1) and (max-aspect-ratio: 4/1) {
+	:root {
+		--scale: 26px;
+	}
+}
+@media screen and (min-width: 5000px) and (min-aspect-ratio: 2/1) and (max-aspect-ratio: 4/1) {
+	:root {
+		--scale: 28px;
+	}
+}
+
+@media screen and (min-resolution: 1.25dppx) and (min-aspect-ratio: 16/9) {
+	:root {
+		--ratio-coefficient: calc(1 / 1.25);
+	}
+}
+
+@media screen and (min-resolution: 1.5dppx) and (min-aspect-ratio: 16/9) {
+	:root {
+		--ratio-coefficient: calc(1 / 1.5);
+	}
+}
+
+@media screen and (min-resolution: 1.75dppx) and (min-aspect-ratio: 16/9) {
+	:root {
+		--ratio-coefficient: calc(1 / 1.75);
+	}
+}
+@media screen and (min-resolution: 2dppx) and (min-aspect-ratio: 16/9) {
+	:root {
+		--ratio-coefficient: 0.9;
+	}
+}

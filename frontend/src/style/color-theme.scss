@@ -1,0 +1,20 @@
+div[color-theme="dark"]{
+    --bg-color-400: #505050;
+    --bg-color-300: #474747;
+    --fill-bg-btn-color: #474747;
+    --bg-color-200: #313131;
+    --bg-color-100: #181717;
+    
+    --pr-color: #e2dfde;
+    --font-color: #e2dfde;
+}
+div[color-theme="white"]{
+    --bg-color-400: #dadada;
+    --bg-color-300: #ececec;
+    --fill-bg-btn-color: #ececec;
+    --bg-color-200: #eeeeee;
+    --bg-color-100: #ffffff;
+
+    --pr-color: #1a1a1a;
+    --font-color: #1a1a1a;
+}

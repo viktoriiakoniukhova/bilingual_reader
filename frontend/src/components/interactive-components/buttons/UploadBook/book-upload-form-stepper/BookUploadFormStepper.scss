@@ -1,0 +1,54 @@
+section.load-book-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 1.5rem 0 !important;
+}
+
+
+div.step-wrapper {
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    padding-bottom: 3rem;
+}
+
+div.step-label-wrapper {
+    position: absolute;
+    z-index: 1;
+    top: -2rem;
+    left: calc(-5.5rem / 2 + 0.5rem);
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 5.5rem;
+    height: 5.5rem;
+    aspect-ratio: 1/1;
+    border-radius: 0.25rem;
+    background-color: var(--bg-color-100);
+    border: var(--border);
+
+    &.--active {
+        background-color: var(--bg-color-300);
+    }
+
+    &.--completed{
+        background-color: var(--pr-color-outline);
+        border: var(--br-size) solid transparent;
+    }
+    div.step-label-icon-wrapper {
+        background-color: var(--bg-color-100);
+        display: flex;
+        padding: 0.75rem;
+        border-radius: 50%;
+
+        svg.step-label-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            aspect-ratio: 1/1;
+            fill: var(--font-pr-color);
+        }
+    }
+}

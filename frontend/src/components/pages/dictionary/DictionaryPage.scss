@@ -1,0 +1,48 @@
+ul.dictionary-list {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 2rem 1.5rem;
+
+    li.keyword-row-wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+        border-radius: 3rem;
+        padding: 0 1rem;
+
+        &.header {
+            margin-bottom: 1rem;
+        }
+
+        &:hover:not(.header) {
+            background-color: var(--bg-color-200);
+        }
+
+        div.keyword-item-row-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex: 1 0 0;
+
+            max-width: 30%;
+            width: 30%;
+            padding-right: 1rem;
+            height: 3.75rem;
+            border-right: var(--border);
+
+            .keyword-word {
+                overflow-x: hidden;
+                white-space: nowrap;
+            }
+
+            &:nth-child(3) {
+                padding-right: 0;
+                border-right: none;
+            }
+        }
+    }
+}

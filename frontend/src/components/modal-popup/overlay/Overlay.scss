@@ -1,0 +1,58 @@
+div.modal-dialog-popup-wrapper {
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #b7b094a9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    &.initial-animate-effect {
+        opacity: 1;
+        transform: translateY(0);
+        animation: initialize-modal-opacity 300ms ease-in-out 1;
+
+        > .modal-dialog-content-wrapper {
+            animation: initialize-modal-transform 300ms ease-in-out 1;
+        }
+    }
+
+    div.modal-dialog-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 37.5rem;
+        height: auto;
+        background-color: var(--bg-color-100);
+        border-radius: 1rem;
+        box-shadow: 0 0 6rem 1rem #b6ad87be;
+    }
+}
+
+
+
+
+@keyframes initialize-modal-opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes initialize-modal-transform {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}

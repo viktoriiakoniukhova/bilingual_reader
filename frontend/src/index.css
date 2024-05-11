@@ -1,0 +1,10 @@
+@import url("./style/normalize.scss");
+@import url("./style/aspect-ratio-scaling.scss");
+
+@import url("./style/color-palette.scss");
+@import url("./style/color-theme.scss");
+
+@import url("./style/font-face-family.scss");
+@import url("./style/fonts-type.scss");
+@import url("./style/adapt-page-content.scss");
+@import url("./style/buttons-types.scss");

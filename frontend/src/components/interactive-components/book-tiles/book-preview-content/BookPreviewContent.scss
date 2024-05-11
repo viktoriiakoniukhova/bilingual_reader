@@ -1,0 +1,100 @@
+div.book-preview-wrapper > div.scroll-context-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+main.main-part {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+
+    div.preview-img-title-book-wrapper {
+
+        height: 25rem;
+        max-width: 15.75rem;
+        background-color: var(--bg-color-300);
+        border-radius: 0.75rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: var(--border);
+
+        &.--placeholder {
+            width: 15.75rem;
+        }
+
+        svg {
+            fill: var(--pr-color);
+            width: 7.5rem;
+            height: 7.5rem;
+            pointer-events: none !important;
+            user-select: none !important;
+            aspect-ratio: 1/1;
+        }
+    }
+
+    img.preview-book {
+        height: 100%;
+        max-width: 350px;
+        display: flex;
+        object-fit: cover;
+        overflow: hidden;
+        width: unset;
+        overflow: hidden;
+        border-radius: 0.75rem;
+
+    }
+
+    div.preview-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    section.right-part {
+        height: 25rem;
+        width: 100%;
+        flex: 1 0 0;
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+
+        div.upper-part {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        div.bottom-part {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+    }
+}
+
+ul.book-genre-track-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    row-gap: 0.5rem;
+    column-gap: 0.5rem;
+
+    li.genre-title {
+        cursor: pointer;
+        user-select: none;
+        border-radius: 0.5rem;
+        display: flex;
+        background-color: var(--bg-color-300);
+        border: var(--border);
+        padding: 0.5rem 1rem;
+    }
+}
